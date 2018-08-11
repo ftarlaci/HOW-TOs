@@ -12,3 +12,12 @@ for(int i = 0; i < vec.size(); i++){
         cout << "[" << vec[i][j] << "," << "]" << endl;
     }
 }
+
+
+
+// HOW-TO find the difference between two numbers 
+// method 1. 
+int diff = x > y ? x - y : y - x;
+
+// method 2. 
+int diff = std::abs(x - y);

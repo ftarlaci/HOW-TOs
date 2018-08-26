@@ -51,7 +51,43 @@ transform(s.begin(), s.end(), s.begin(), ::toupper);
 
 
 /* -------------------------------------------------------------------------------------*/
+/* Insert element into sorted order. The main idea is: in order for a list to be in sorted
+	order, every element has to be smaller than the element that comes one position after it.
+	Therefore, we find the first element in the vector that is bigger than the element we 
+	want to insert, we then know that the element we are trying to insert must come directly
+	before that element.  
+*/
+	size_t insertAt(vector<int>& vec, int toInsert){
+		for(size_t i = 0; i < vec.size(); ++i){
+			if(toInsert < vec[i]){
+				return i;
+			}
+		}
+		return vec.size();
+	}
 
+	// given a vector v and an element e, to insert e into v at position n, use:
+	v.insert(v.begin() + n, e);
+
+	// eg: insert element 10 at position 5:
+	v.insert(v.begin() + 5, 10) // this will insert element 10 at position 6 (vectors are 0 indexed)
+	// When an element is inserted at a position, all of the elements after it are
+	// shuffled down one spot to make room, so calling insert will never overwrite a value.
+
+	// finally: 
+	int main() {
+		vector<int> vals;
+		/* Read the values. */
+		for (int i = 0; i < kNumValues; ++i) {
+			cout << "Enter an integer: ";
+			int val = GetInteger();
+		/* Insert the element at the correct position. */
+			vals.insert(vals.begin() + InsertionIndex(vals, val), val);
+		}
+		/* Print out the sorted list. */
+		for (size_t i = 0; i < vals.size(); ++i)
+			cout << vals[i] << endl;
+	}
 /* -------------------------------------------------------------------------------------*/
 
 /* -------------------------------------------------------------------------------------*/

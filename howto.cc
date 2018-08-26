@@ -130,13 +130,8 @@ transform(s.begin(), s.end(), s.begin(), ::toupper);
 	resize to expand the vector to hold seven elements. Because we specified a default value, the newlycreated
 	elements default to 1, and so the sequence is now 0, 0, 0, 0, 0, 1, 1. Finally, we use resize to trim
 	the sequence. Because the second argument to resize is only considered if new elements are added, it is
-	effectively ignored.
-
-
-
-
-
-	*/
+	effectively ignored. From CS106L Reader
+*/
 /* -------------------------------------------------------------------------------------*/
 
 /* -------------------------------------------------------------------------------------*/

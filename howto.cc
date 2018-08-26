@@ -82,7 +82,7 @@ transform(s.begin(), s.end(), s.begin(), ::toupper);
 			cout << "Enter an integer: ";
 			int val = GetInteger();
 		/* Insert the element at the correct position. */
-			vals.insert(vals.begin() + InsertionIndex(vals, val), val);
+			vals.insert(vals.begin() + insertAt(vals, val), val);
 		}
 		/* Print out the sorted list. */
 		for (size_t i = 0; i < vals.size(); ++i)

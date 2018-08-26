@@ -81,13 +81,25 @@ transform(s.begin(), s.end(), s.begin(), ::toupper);
 		for (int i = 0; i < kNumValues; ++i) {
 			cout << "Enter an integer: ";
 			int val = getInteger(); // utility function that we wrote separately
-		/* Insert the element at the correct position. */
+		/* Insert the element at the correct position. This line is the crux of the algorithm. */
 			vals.insert(vals.begin() + insertAt(vals, val), val);
 		}
 		/* Print out the sorted list. */
 		for (size_t i = 0; i < vals.size(); ++i)
 			cout << vals[i] << endl;
 	}
+
+	/* More on vector initialization: 
+		"In some cases, you may want to initialize the vector to a certain size where each element
+		holds a value other than zero. You may wish, for example, to construct a vector<string> holding
+		five copies of the string “(none),” or a vector<double> holding twenty copies of the value 137. 
+		In these cases, C++ lets you specify both the number and default value for the elements in the vector
+		using the following syntax: vector<double> myReals(20, 137.0); vector<string> myStrings(5, "(none)");
+		Notice that we've enclosed in parentheses both the number of starting elements in the vector and the
+		value of these starting elements. An important detail is that this syntax is only legal when initially
+		creating a vector. If you have an existing vector and try to use this syntax, you will get a compile-time
+		error." From CS106L Reader
+		*/
 /* -------------------------------------------------------------------------------------*/
 
 /* -------------------------------------------------------------------------------------*/

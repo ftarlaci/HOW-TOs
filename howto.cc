@@ -101,7 +101,42 @@ transform(s.begin(), s.end(), s.begin(), ::toupper);
 		error." From CS106L Reader
 		*/
 /* -------------------------------------------------------------------------------------*/
+/* If you need to make big changes to a vector's size (adding, deleting), "resize" is a better
+	option than 'oush_back or 'insert'. Resize works by adding or removing elements from the end
+	of the vector until the desired size is reached. 
 
+	This function takes in a vector<int>, then prints out the elements in the vector one at a time, followed
+	by a newline. Given this function, consider the following code snippet:
+	
+	vector<int> myVector; // Defaults to empty vector
+	PrintVector(myVector); // Output: [nothing]
+	
+	myVector.resize(10); // Grow the vector, setting new elements to 0
+	PrintVector(myVector); // Output: 0 0 0 0 0 0 0 0 0 0
+	
+	myVector.resize(5); // Shrink the vector
+	PrintVector(myVector); // Output: 0 0 0 0 0
+	
+	myVector.resize(7, 1); // Grow the vector, setting new elements to 1
+	PrintVector(myVector); // Output: 0 0 0 0 0 1 1
+	
+	myVector.resize(1, 7); // The second parameter is effectively ignored.
+	PrintVector(myVector); // Output: 0
+	
+	In the first line, we construct a new vector, which is by default empty. Consequently, the call to
+	PrintVector will produce no output. We then invoke resize to add ten elements to the vector. These
+	elements are added to the end of the vector, and because we did not specify a default value are all
+	initialized to zero. On our next call to resize, we shrink the vector down to five elements. Next, we use
+	resize to expand the vector to hold seven elements. Because we specified a default value, the newlycreated
+	elements default to 1, and so the sequence is now 0, 0, 0, 0, 0, 1, 1. Finally, we use resize to trim
+	the sequence. Because the second argument to resize is only considered if new elements are added, it is
+	effectively ignored.
+
+
+
+
+
+	*/
 /* -------------------------------------------------------------------------------------*/
 
 /* -------------------------------------------------------------------------------------*/

@@ -80,7 +80,7 @@ transform(s.begin(), s.end(), s.begin(), ::toupper);
 		/* Read the values. */
 		for (int i = 0; i < kNumValues; ++i) {
 			cout << "Enter an integer: ";
-			int val = GetInteger();
+			int val = getInteger(); // utility function that we wrote separately
 		/* Insert the element at the correct position. */
 			vals.insert(vals.begin() + insertAt(vals, val), val);
 		}
